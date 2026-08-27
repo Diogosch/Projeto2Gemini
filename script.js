@@ -1,6 +1,75 @@
-/* =========================
-   TEMA CLARO
-========================= */
+// ==========================================
+// TAMANHO DA FONTE
+// ==========================================
+
+let tamanhoFonte = 20;
+
+const tamanhoMinimo = 14;
+const tamanhoMaximo = 32;
+const tamanhoPadrao = 20;
+
+
+// Atualiza o tamanho da fonte
+function atualizarFonte() {
+
+    document.documentElement.style.setProperty(
+        "--tamanho-fonte",
+        tamanhoFonte + "px"
+    );
+
+}
+
+
+// ==========================================
+// AUMENTAR LETRAS
+// ==========================================
+
+function aumentarFonte() {
+
+    if (tamanhoFonte < tamanhoMaximo) {
+
+        tamanhoFonte += 2;
+
+        atualizarFonte();
+
+    }
+
+}
+
+
+// ==========================================
+// DIMINUIR LETRAS
+// ==========================================
+
+function diminuirFonte() {
+
+    if (tamanhoFonte > tamanhoMinimo) {
+
+        tamanhoFonte -= 2;
+
+        atualizarFonte();
+
+    }
+
+}
+
+
+// ==========================================
+// TAMANHO NORMAL
+// ==========================================
+
+function tamanhoNormal() {
+
+    tamanhoFonte = tamanhoPadrao;
+
+    atualizarFonte();
+
+}
+
+
+// ==========================================
+// TEMA CLARO
+// ==========================================
 
 function temaClaro() {
 
@@ -10,9 +79,9 @@ function temaClaro() {
 }
 
 
-/* =========================
-   TEMA ESCURO
-========================= */
+// ==========================================
+// TEMA ESCURO
+// ==========================================
 
 function temaEscuro() {
 
@@ -22,9 +91,9 @@ function temaEscuro() {
 }
 
 
-/* =========================
-   ALTO CONTRASTE
-========================= */
+// ==========================================
+// ALTO CONTRASTE
+// ==========================================
 
 function altoContraste() {
 
@@ -34,50 +103,9 @@ function altoContraste() {
 }
 
 
-/* =========================
-   TAMANHO DAS LETRAS
-========================= */
-
-let tamanhoFonte = 20;
-
-function aumentarFonte() {
-
-    if (tamanhoFonte < 30) {
-
-        tamanhoFonte += 2;
-
-        document.body.style.fontSize = tamanhoFonte + "px";
-
-    }
-
-}
-
-
-function diminuirFonte() {
-
-    if (tamanhoFonte > 14) {
-
-        tamanhoFonte -= 2;
-
-        document.body.style.fontSize = tamanhoFonte + "px";
-
-    }
-
-}
-
-
-function tamanhoNormal() {
-
-    tamanhoFonte = 20;
-
-    document.body.style.fontSize = "20px";
-
-}
-
-
-/* =========================
-   LEITURA EM VOZ ALTA
-========================= */
+// ==========================================
+// LEITURA EM VOZ ALTA
+// ==========================================
 
 function falarTexto() {
 
@@ -88,19 +116,16 @@ function falarTexto() {
     const fala = new SpeechSynthesisUtterance(texto);
 
     fala.lang = "pt-BR";
-
     fala.rate = 0.9;
-
     fala.pitch = 1;
 
     window.speechSynthesis.speak(fala);
-
 }
 
 
-/* =========================
-   PARAR LEITURA
-========================= */
+// ==========================================
+// PARAR LEITURA
+// ==========================================
 
 function pararFala() {
 
@@ -109,9 +134,9 @@ function pararFala() {
 }
 
 
-/* =========================
-   LER UMA DICA
-========================= */
+// ==========================================
+// LER UMA DICA
+// ==========================================
 
 function lerCard(botao) {
 
@@ -128,17 +153,16 @@ function lerCard(botao) {
     const fala = new SpeechSynthesisUtterance(conteudo);
 
     fala.lang = "pt-BR";
-
     fala.rate = 0.9;
+    fala.pitch = 1;
 
     window.speechSynthesis.speak(fala);
-
 }
 
 
-/* =========================
-   LER ALERTA
-========================= */
+// ==========================================
+// LER ALERTA
+// ==========================================
 
 function falarAlerta() {
 
@@ -151,9 +175,15 @@ function falarAlerta() {
     const fala = new SpeechSynthesisUtterance(texto);
 
     fala.lang = "pt-BR";
-
     fala.rate = 0.9;
+    fala.pitch = 1;
 
     window.speechSynthesis.speak(fala);
-
 }
+
+
+// ==========================================
+// INICIAR COM TAMANHO PADRÃO
+// ==========================================
+
+atualizarFonte();
