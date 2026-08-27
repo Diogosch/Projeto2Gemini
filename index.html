@@ -4,231 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navegação Segura e Direitos Digitais</title>
-  <style>
-    /* RESET E VARIÁVEIS */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --accent-danger: #dc2626;
-      --accent-danger-hover: #b91c1c;
-      --bg-light: #f8fafc;
-      --bg-white: #ffffff;
-      --text-dark: #0f172a;
-      --text-muted: #475569;
-      --border-color: #e2e8f0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      line-height: 1.6;
-      color: var(--text-dark);
-      background-color: var(--bg-light);
-    }
-
-    /* BANNER / HERO SECTION */
-    .hero {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      color: #ffffff;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .hero-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-      margin-bottom: 32px;
-    }
-
-    .btn-help {
-      display: inline-block;
-      background-color: var(--accent-danger);
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 16px 36px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
-      transition: all 0.2s ease-in-out;
-    }
-
-    .btn-help:hover {
-      background-color: var(--accent-danger-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
-    }
-
-    /* LAYOUT GLOBAL DE SEÇÕES */
-    .section-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 32px;
-      text-align: center;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background-color: var(--primary);
-      margin: 12px auto 0;
-      border-radius: 2px;
-    }
-
-    /* GRID DE CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background-color: var(--bg-white);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    }
-
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      color: var(--primary);
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* SEÇÃO 1: DICAS DE SEGURANÇA */
-    .safety-tips {
-      background-color: var(--bg-white);
-    }
-
-    /* SEÇÃO 2: DIREITOS DIGITAIS */
-    .rights-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .right-item {
-      background-color: var(--bg-white);
-      border-left: 4px solid var(--primary);
-      padding: 20px;
-      border-radius: 0 8px 8px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    }
-
-    .right-item h3 {
-      font-size: 1.15rem;
-      margin-bottom: 6px;
-    }
-
-    .right-item p {
-      color: var(--text-muted);
-    }
-
-    /* SEÇÃO 3: IDENTIFICAÇÃO DE GOLPES */
-    .scams-section {
-      background-color: var(--bg-white);
-    }
-
-    .alert-card {
-      border-top: 4px solid var(--accent-danger);
-    }
-
-    .alert-card h3 {
-      color: var(--accent-danger);
-    }
-
-    /* RODAPÉ SIMPLES */
-    footer {
-      text-align: center;
-      padding: 24px;
-      background-color: #0f172a;
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    /* RESPONSIVIDADE */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .section-container {
-        padding: 40px 16px;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- BANNER INICIAL COM BOTÃO DE AJUDA -->
   <header class="hero">
     <div class="hero-container">
       <h1>Navegue com Segurança e Proteção Digital</h1>
-      <p>Entenda seus direitos, proteja seus dados e saiba como agir em situações de risco no ambiente online.</p>
-      <a href="#ajuda" class="btn-help">PRECISO DE AJUDA AGORA</a>
+      <p>
+        Entenda seus direitos, proteja seus dados e saiba como agir
+        em situações de risco no ambiente online.
+      </p>
+
+      <a href="#ajuda" class="btn-help">
+        PRECISO DE AJUDA AGORA
+      </a>
     </div>
   </header>
 
   <!-- SEÇÃO 1: DICAS DE SEGURANÇA DIGITAL -->
   <section class="safety-tips">
     <div class="section-container">
-      <h2 class="section-title">Dicas Importantes de Segurança</h2>
+      <h2 class="section-title">
+        Dicas Importantes de Segurança
+      </h2>
+
       <div class="grid">
+
         <article class="card">
           <h3>Senhas Fortes e Únicas</h3>
-          <p>Utilize senhas longas com letras, números e símbolos. Evite repetir a mesma senha em múltiplos serviços e considere usar um gerenciador de senhas.</p>
+          <p>
+            Utilize senhas longas com letras, números e símbolos.
+            Evite repetir a mesma senha em múltiplos serviços e
+            considere usar um gerenciador de senhas.
+          </p>
         </article>
+
         <article class="card">
           <h3>Autenticação em Duas Etapas</h3>
-          <p>Ative a verificação em duas etapas (2FA) em todas as suas contas. Isso adiciona uma camada extra de proteção além da sua senha habitual.</p>
+          <p>
+            Ative a verificação em duas etapas (2FA) em todas as
+            suas contas. Isso adiciona uma camada extra de proteção
+            além da sua senha habitual.
+          </p>
         </article>
+
         <article class="card">
           <h3>Atualizações de Sistema</h3>
-          <p>Mantenha seu sistema operacional e aplicativos sempre atualizados. As atualizações corrigem falhas de segurança críticas.</p>
+          <p>
+            Mantenha seu sistema operacional e aplicativos sempre
+            atualizados. As atualizações corrigem falhas de
+            segurança críticas.
+          </p>
         </article>
+
         <article class="card">
           <h3>Cuidado com Redes Wi-Fi Públicas</h3>
-          <p>Evite acessar contas bancárias ou inserir informações sensíveis em redes Wi-Fi abertas de locais públicos sem o uso de uma VPN confiável.</p>
+          <p>
+            Evite acessar contas bancárias ou inserir informações
+            sensíveis em redes Wi-Fi abertas de locais públicos
+            sem o uso de uma VPN confiável.
+          </p>
         </article>
+
       </div>
     </div>
   </section>
@@ -236,24 +76,49 @@
   <!-- SEÇÃO 2: DIREITOS NA INTERNET -->
   <section>
     <div class="section-container">
-      <h2 class="section-title">Seus Direitos no Ambiente Digital</h2>
+
+      <h2 class="section-title">
+        Seus Direitos no Ambiente Digital
+      </h2>
+
       <div class="rights-list">
+
         <article class="right-item">
           <h3>Privacidade e Proteção de Dados (LGPD)</h3>
-          <p>Você tem o direito de saber como suas informações pessoais são coletadas, armazenadas e utilizadas por empresas, além do direito de solicitar a exclusão desses dados.</p>
+          <p>
+            Você tem o direito de saber como suas informações pessoais
+            são coletadas, armazenadas e utilizadas por empresas,
+            além do direito de solicitar a exclusão desses dados.
+          </p>
         </article>
+
         <article class="right-item">
           <h3>Marco Civil da Internet</h3>
-          <p>Garante a neutralidade da rede, a liberdade de expressão e estabelece regras claras para a retirada de conteúdos indevidos ou sem autorização.</p>
+          <p>
+            Garante a neutralidade da rede, a liberdade de expressão
+            e estabelece regras claras para a retirada de conteúdos
+            indevidos ou sem autorização.
+          </p>
         </article>
+
         <article class="right-item">
           <h3>Direito ao Esquecimento e Remoção de Conteúdo</h3>
-          <p>É garantida a solicitação judicial para remoção de conteúdos que violem a intimidade, honra ou dados pessoais expostos sem consentimento.</p>
+          <p>
+            É garantida a solicitação judicial para remoção de
+            conteúdos que violem a intimidade, honra ou dados pessoais
+            expostos sem consentimento.
+          </p>
         </article>
+
         <article class="right-item">
           <h3>Defesa do Consumidor Online</h3>
-          <p>Nas compras realizadas via internet, o Código de Defesa do Consumidor garante o direito de arrependimento e devolução do produto em até 7 dias após o recebimento.</p>
+          <p>
+            Nas compras realizadas via internet, o Código de Defesa
+            do Consumidor garante o direito de arrependimento e
+            devolução do produto em até 7 dias após o recebimento.
+          </p>
         </article>
+
       </div>
     </div>
   </section>
@@ -261,46 +126,93 @@
   <!-- SEÇÃO 3: COMO IDENTIFICAR GOLPES -->
   <section class="scams-section">
     <div class="section-container">
-      <h2 class="section-title">Como Identificar Golpes no Dia a Dia</h2>
+
+      <h2 class="section-title">
+        Como Identificar Golpes no Dia a Dia
+      </h2>
+
       <div class="grid">
+
         <article class="card alert-card">
           <h3>Mensagens com Urgência Excessiva</h3>
-          <p>Golpistas frequentemente criam senso de urgência ("Sua conta será bloqueada hoje!") para impedir que você pense antes de agir.</p>
+          <p>
+            Golpistas frequentemente criam senso de urgência
+            ("Sua conta será bloqueada hoje!") para impedir que
+            você pense antes de agir.
+          </p>
         </article>
+
         <article class="card alert-card">
           <h3>Links Suspeitos (Phishing)</h3>
-          <p>Verifique o endereço digitado no navegador. Golpes costumam usar links parecidos com os oficiais, mas com pequenas alterações na grafia.</p>
+          <p>
+            Verifique o endereço digitado no navegador. Golpes
+            costumam usar links parecidos com os oficiais, mas
+            com pequenas alterações na grafia.
+          </p>
         </article>
+
         <article class="card alert-card">
           <h3>Ofertas Excessivamente Vantajosas</h3>
-          <p>Produtos de alto valor com preços extremamente baixos ou promessas de ganho financeiro rápido costumam indicar fraude.</p>
+          <p>
+            Produtos de alto valor com preços extremamente baixos
+            ou promessas de ganho financeiro rápido costumam
+            indicar fraude.
+          </p>
         </article>
+
         <article class="card alert-card">
           <h3>Pedidos de Confirmação de Códigos</h3>
-          <p>Nenhuma empresa ou banco solicita códigos de verificação enviados por SMS ou WhatsApp. Nunca repasse esses dados a terceiros.</p>
+          <p>
+            Nenhuma empresa ou banco solicita códigos de verificação
+            enviados por SMS ou WhatsApp. Nunca repasse esses dados
+            a terceiros.
+          </p>
         </article>
+
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO DE SUPORTE (DESTINO DO BOTÃO) -->
-  <section id="ajuda" style="background-color: #e2e8f0;">
-    <div class="section-container" style="text-align: center;">
-      <h2 class="section-title">Canais de Ajuda e Denúncia</h2>
-      <p style="margin-bottom: 24px; color: var(--text-muted);">Se você foi vítima de algum golpe ou violação de direitos online, procure ajuda nos canais oficiais:</p>
+  <!-- SEÇÃO DE SUPORTE -->
+  <section id="ajuda" class="help-section">
+
+    <div class="section-container help-container">
+
+      <h2 class="section-title">
+        Canais de Ajuda e Denúncia
+      </h2>
+
+      <p class="help-text">
+        Se você foi vítima de algum golpe ou violação de direitos
+        online, procure ajuda nos canais oficiais:
+      </p>
+
       <div class="grid">
+
         <div class="card">
           <h3>SaferNet Brasil</h3>
-          <p>Canal de denúncias de crimes cibernéticos e orientação para vítimas de violações digitais.</p>
+          <p>
+            Canal de denúncias de crimes cibernéticos e orientação
+            para vítimas de violações digitais.
+          </p>
         </div>
+
         <div class="card">
           <h3>CERT.br</h3>
-          <p>Centro de Estudos, Resposta e Tratamento de Incidentes de Segurança no Brasil.</p>
+          <p>
+            Centro de Estudos, Resposta e Tratamento de Incidentes
+            de Segurança no Brasil.
+          </p>
         </div>
+
         <div class="card">
           <h3>Delegacias Especializadas</h3>
-          <p>Procure a Delegacia de Crimes Cibernéticos do seu estado ou registre um Boletim de Ocorrência online.</p>
+          <p>
+            Procure a Delegacia de Crimes Cibernéticos do seu estado
+            ou registre um Boletim de Ocorrência online.
+          </p>
         </div>
+
       </div>
     </div>
   </section>
