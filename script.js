@@ -1,23 +1,50 @@
 // ==========================================
-// TAMANHO DA FONTE
+// CONFIGURAÇÃO DO TAMANHO DA FONTE
 // ==========================================
 
-let tamanhoFonte = 20;
+const tamanhoPadrao = 16;
+const tamanhoMinimo = 12;
+const tamanhoMaximo = 24;
 
-const tamanhoMinimo = 14;
-const tamanhoMaximo = 32;
-const tamanhoPadrao = 20;
+let tamanhoFonte = tamanhoPadrao;
 
 
-// Atualiza o tamanho da fonte
+// ==========================================
+// ATUALIZAR FONTE
+// ==========================================
+
 function atualizarFonte() {
 
     document.documentElement.style.setProperty(
-        "--tamanho-fonte",
-        tamanhoFonte + "px"
+        '--tamanho-fonte',
+        tamanhoFonte + 'px'
     );
 
 }
+
+
+// ==========================================
+// AUMENTAR LETRAS
+// ==========================================
+
+function aumentarFonte() {
+
+    if (tamanhoFonte < tamanhoMaximo) {
+
+        tamanhoFonte += 2;
+
+        // Evita passar do máximo
+        if (tamanhoFonte > tamanhoMaximo) {
+            tamanhoFonte = tamanhoMaximo;
+        }
+
+        atualizarFonte();
+    }
+
+}
+
+
+// ==========================================
 // DIMINUIR LETRAS
 // ==========================================
 
