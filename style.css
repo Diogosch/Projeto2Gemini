@@ -2,6 +2,16 @@
    CONFIGURAÇÕES GERAIS
 ========================= */
 
+body {
+    font-size: var(--tamanho-fonte, 16px);
+}
+
+<button onclick="diminuirFonte()">A-</button>
+
+<button onclick="tamanhoNormal()">A</button>
+
+<button onclick="aumentarFonte()">A+</button>
+
 * {
     box-sizing: border-box;
     margin: 0;
