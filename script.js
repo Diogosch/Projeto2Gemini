@@ -18,53 +18,6 @@ function atualizarFonte() {
     );
 
 }
-// ==========================================
-// CONFIGURAÇÃO DO TAMANHO DA FONTE
-// ==========================================
-
-const tamanhoPadrao = 16;
-const tamanhoMinimo = 12;
-const tamanhoMaximo = 24;
-
-let tamanhoFonte = tamanhoPadrao;
-
-
-// ==========================================
-// ATUALIZAR FONTE
-// ==========================================
-
-function atualizarFonte() {
-
-    document.documentElement.style.setProperty(
-        '--tamanho-fonte',
-        tamanhoFonte + 'px'
-    );
-
-}
-
-
-// ==========================================
-// AUMENTAR LETRAS
-// ==========================================
-
-function aumentarFonte() {
-
-    if (tamanhoFonte < tamanhoMaximo) {
-
-        tamanhoFonte += 2;
-
-        // Evita passar do máximo
-        if (tamanhoFonte > tamanhoMaximo) {
-            tamanhoFonte = tamanhoMaximo;
-        }
-
-        atualizarFonte();
-    }
-
-}
-
-
-// ==========================================
 // DIMINUIR LETRAS
 // ==========================================
 
