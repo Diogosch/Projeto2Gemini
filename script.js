@@ -18,6 +18,29 @@ function atualizarFonte() {
     );
 
 }
+// ==========================================
+// CONFIGURAÇÃO DO TAMANHO DA FONTE
+// ==========================================
+
+const tamanhoPadrao = 16;
+const tamanhoMinimo = 12;
+const tamanhoMaximo = 24;
+
+let tamanhoFonte = tamanhoPadrao;
+
+
+// ==========================================
+// ATUALIZAR FONTE
+// ==========================================
+
+function atualizarFonte() {
+
+    document.documentElement.style.setProperty(
+        '--tamanho-fonte',
+        tamanhoFonte + 'px'
+    );
+
+}
 
 
 // ==========================================
@@ -30,8 +53,12 @@ function aumentarFonte() {
 
         tamanhoFonte += 2;
 
-        atualizarFonte();
+        // Evita passar do máximo
+        if (tamanhoFonte > tamanhoMaximo) {
+            tamanhoFonte = tamanhoMaximo;
+        }
 
+        atualizarFonte();
     }
 
 }
@@ -47,8 +74,12 @@ function diminuirFonte() {
 
         tamanhoFonte -= 2;
 
-        atualizarFonte();
+        // Evita passar do mínimo
+        if (tamanhoFonte < tamanhoMinimo) {
+            tamanhoFonte = tamanhoMinimo;
+        }
 
+        atualizarFonte();
     }
 
 }
@@ -66,6 +97,12 @@ function tamanhoNormal() {
 
 }
 
+
+// ==========================================
+// APLICA O TAMANHO INICIAL
+// ==========================================
+
+atualizarFonte();
 
 // ==========================================
 // TEMA CLARO
